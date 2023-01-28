@@ -7,7 +7,7 @@ dpkg --add-architecture i386
 apt-get update
 apt-get -y install python-is-python3 xvfb x11vnc xdotool wget tar supervisor net-tools fluxbox gnupg2
 apt-key adv --fetch-keys https://dl.winehq.org/wine-builds/winehq.key
-echo 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' >> /etc/apt/sources.list.d/winehq.list
+echo 'deb https://dl.winehq.org/wine-builds/ubuntu/ jammy main' >> /etc/apt/sources.list.d/winehq.list
 apt-get update
 apt-get -y install winehq-stable
 apt-get -y full-upgrade
