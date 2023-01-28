@@ -6,8 +6,9 @@ chmod -R 777 /supervisor
 dpkg --add-architecture i386
 apt-get update
 apt-get -y install python-is-python3 xvfb x11vnc xdotool wget tar supervisor net-tools fluxbox gnupg2
-apt-key adv --fetch-keys https://dl.winehq.org/wine-builds/winehq.key
-echo 'deb https://dl.winehq.org/wine-builds/ubuntu/ jammy main' >> /etc/apt/sources.list.d/winehq.list
+mkdir -pm755 /etc/apt/keyrings
+wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
 apt-get update
 apt-get -y install winehq-stable
 apt-get -y full-upgrade
