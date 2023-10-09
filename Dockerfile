@@ -1,17 +1,16 @@
-FROM ubuntu:latest
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 
-ENV HOME /home/homedir
+ENV HOME /config
 ENV WINEPREFIX ${HOME}/prefix32
 ENV WINEARCH win32
-ENV DISPLAY :0
+ENV TITLE wine-docker
 
 COPY build.sh /
 RUN chmod +x /build.sh && /build.sh && rm /build.sh
 
+# kasmvnc
+COPY root /
+
 VOLUME ${HOME}
 
-EXPOSE 8080
 
-USER nobody
-
-CMD /usr/bin/supervisord -c $HOME/supervisord.conf

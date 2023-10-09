@@ -1,0 +1,13 @@
+version: '3'
+services:
+  wine-docker:
+    image: wine-docker
+    container_name: wine-docker
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Rome
+    ports:
+      - 3000:3000
+    volumes:
+      - ./homedir:/config
