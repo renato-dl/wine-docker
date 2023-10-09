@@ -1,14 +1,14 @@
 # wine-docker
 Docker image with Wine and VNC
 
-Inspired by [wine-x11-novnc-docker](https://github.com/solarkennedy/wine-x11-novnc-docker)
+Based on [KasmVNC Base Images from LinuxServer](https://github.com/linuxserver/docker-baseimage-kasmvnc)
 
 ## Instructions
-* HOME_DIR: volume containing your supervisord.conf
-* User provided with flag -u must own HOME_DIR
+* HOME_DIR: volume containing the wine prefix directory
+* PUID and PGID assigned to container user (`abc`) must have permission to access HOME_DIR
 ### Build and run
     docker build -t wine-docker .
-    docker run -d -u user:group -p 8080:8080 -v <HOME_DIR>:/home/homedir --name wine-docker wine-docker
+    docker run -d -e PUID=1000 -e PGID=1000 -p 3000:3000 -v HOME_DIR:/config --name wine-docker wine-docker
 
 ### Run from registry
-    docker run -d -u user:group -p 8080:8080 -v <HOME_DIR>:/home/homedir --name wine-docker docker.pkg.github.com/renato-dl/wine-docker/wine-docker
+    docker run -d -e PUID=1000 -e PGID=1000 -p 3000:3000 -v HOME_DIR:/config --name wine-docker docker.pkg.github.com/renato-dl/wine-docker/wine-docker
