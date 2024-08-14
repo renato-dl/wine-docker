@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 
 ENV HOME /config
 ENV WINEPREFIX ${HOME}/prefix32
