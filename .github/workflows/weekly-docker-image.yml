@@ -4,6 +4,9 @@ on:
   schedule:
     - cron:  '0 9 * * SUN'
 
+env:
+  IMAGE_NAME: wine-docker
+
 jobs:
 
   # Push image to GitHub Packages.
