@@ -2,9 +2,6 @@ name: Manual Docker Image
 
 on: workflow_dispatch
 
-env:
-  IMAGE_NAME: wine-docker
-
 jobs:
 
   # Push image to GitHub Packages.
@@ -23,7 +20,7 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
           echo IMAGE_ID=$IMAGE_ID
