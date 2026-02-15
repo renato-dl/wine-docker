@@ -3,6 +3,7 @@ name: Weekly Docker Image
 on:
   schedule:
     - cron:  '0 9 * * SUN'
+  workflow_dispatch:
 
 env:
   IMAGE_NAME: wine-docker
