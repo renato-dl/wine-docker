@@ -1,7 +1,7 @@
 # wine-docker
 Docker image with Wine and VNC
 
-Based on [KasmVNC Base Images from LinuxServer](https://github.com/linuxserver/docker-baseimage-kasmvnc)
+Based on [Selkies Base Images from LinuxServer](https://github.com/linuxserver/docker-baseimage-selkies)
 
 ## Instructions
 * HOME_DIR: volume containing the wine prefix directory
