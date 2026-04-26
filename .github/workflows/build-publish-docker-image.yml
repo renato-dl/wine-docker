@@ -34,7 +34,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
 
             # branch name (only if NOT main)
-            type=ref,event=branch,enable={{not is_default_branch}}
+            type=ref,event=branch,enable={{github.ref_name != github.event.repository.default_branch}}
 
             # semantic versioning (for Git tags like v1.2.3)
             type=semver,pattern={{version}}
